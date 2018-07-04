@@ -1,0 +1,12 @@
+{
+  "name": "light-color-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "soft-white": "node app 370"
+  },
+  "author": "",
+  "license": "ISC"
+}
