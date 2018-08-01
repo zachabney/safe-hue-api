@@ -1,1 +1,1 @@
-* * * * * npm run soft-white
+0 16 * * * npm run soft-white
