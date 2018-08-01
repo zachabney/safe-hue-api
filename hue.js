@@ -26,7 +26,6 @@ async function getAllLights() {
         lightIds.push(lightId);
     }
 
-    console.log('Light IDS', lightIds);
     return lightIds;
 }
 
@@ -94,8 +93,6 @@ async function updateState(id, state) {
 }
 
 async function httpRequest(options) {
-    console.log(options);
-
     return new Promise(resolve => {
         const body = options.body;
         delete options.body;
