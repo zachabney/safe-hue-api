@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "safe-hue-api.fullname" . }}
+  labels:
+    app: {{ template "safe-hue-api.name" . }}
+    chart: {{ template "safe-hue-api.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "safe-hue-api.name" . }}
+    release: {{ .Release.Name }}

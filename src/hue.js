@@ -6,7 +6,7 @@ const USER = process.env.HUE_USER;
 async function setAllToColor(colorTemp) {
     const allLights = await getAllLights();
 
-    setLightsToColor(allLights, colorTemp);
+    await setLightsToColor(allLights, colorTemp);
 }
 
 async function getAllLights() {
