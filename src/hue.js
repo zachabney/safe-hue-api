@@ -1,7 +1,5 @@
 const http = require('http');
-
-const HOST = process.env.HUE_BRIDGE;
-const USER = process.env.HUE_USER;
+const config = require('./config');
 
 async function setAllToColor(colorTemp) {
     const allLights = await getAllLights();
@@ -11,9 +9,9 @@ async function setAllToColor(colorTemp) {
 
 async function getAllLights() {
     const options = {
-        host: HOST,
+        host: config.hue.host,
         port: 80,
-        path: `/api/${USER}/lights`,
+        path: `/api/${config.hue.user}/lights`,
         method: 'GET'
     };
 
@@ -65,9 +63,9 @@ async function setColor(id, ct) {
 
 async function getLightState(id) {
     const options = {
-        host: HOST,
+        host: config.hue.host,
         port: 80,
-        path: `/api/${USER}/lights/${id}`,
+        path: `/api/${config.hue.user}/lights/${id}`,
         method: 'GET'
     };
 
@@ -79,9 +77,9 @@ async function getLightState(id) {
 
 async function updateState(id, state) {
     const options = {
-        host: HOST,
+        host: config.hue.host,
         port: 80,
-        path: `/api/${USER}/lights/${id}/state`,
+        path: `/api/${config.hue.user}/lights/${id}/state`,
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

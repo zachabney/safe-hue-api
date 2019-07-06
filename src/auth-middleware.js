@@ -1,8 +1,8 @@
-const apiSecret = process.env.API_SECRET;
+const config = require('./config')
 
 function isAuthenticated(req, res, next) {
   const token = getToken(req);
-  if (token && token === apiSecret) {
+  if (token && token === config.apiSecret) {
     return next();
   }
 

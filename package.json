@@ -1,6 +1,6 @@
 {
-  "name": "light-color-scheduler",
-  "version": "1.0.0",
+  "name": "safe-hue-api",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,11 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cloudreach/docker-secrets": "^1.0.3",
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.19.1"
   }
 }

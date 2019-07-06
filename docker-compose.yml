@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  hue:
+    image: registry.smplxs.com/safe-hue-api:1.0.1
+    ports:
+      - "4000:3000"
+    environment:
+      - HUE_BRIDGE=10.1.1.50
+    secrets:
+      - source: safe_hue_api_hue_user
+        target: hue_user
+      - source: safe_hue_api_api_secret
+        target: api_secret
+
+secrets:
+  safe_hue_api_hue_user:
+    external: true
+  safe_hue_api_api_secret:
+    external: true

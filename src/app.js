@@ -1,4 +1,4 @@
-require('dotenv').config();
+const config = require('./config');
 
 const express = require('express');
 const app = express();
@@ -23,7 +23,6 @@ app.post('/colortemp', async (req, res) => {
   }
 });
 
-const port = +process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+app.listen(config.port, () => {
+  console.log(`Listening on port ${config.port}`);
 });
